@@ -1,0 +1,184 @@
+.mainPaneBackground{
+    -fx-background-color: white;
+}
+.error {
+    -fx-border-color: red;
+    -fx-border-width: 2px;
+}
+
+#menuGridpane{
+    -fx-border-color: transparent #eeeae1 transparent  transparent;
+    -fx-padding: 0 0 0 0;
+    -fx-border-insets: 0px;
+    -fx-background-insets: 0px;
+}
+#menuTitle{
+  -fx-font-family: "open_sans_lightregular";
+  -fx-font-size: 18px;
+  -fx-font-weight: bold;
+  -fx-text-fill: #7DC0C1;
+}
+#menuTitleSmall{
+  -fx-font-family: "open_sans_lightregular";
+  -fx-font-size: 14px;
+  -fx-font-weight: bold;
+  -fx-text-fill: #7DC0C1;
+}
+.label {
+    -fx-font-size: 14px;
+    -fx-font-family: "open_sans_lightregular";
+}
+.buttonStyle {
+  -fx-font-family: "open_sans_lightregular";
+  -fx-background-color: #7DC0C1;
+  -fx-border: none;
+  -fx-padding: 15px 32px;
+  -fx-text-align: center;
+  -fx-text-decoration: none;
+  -fx-display: inline-block;
+  -fx-font-size: 16px;
+  -fx-text-fill: white;
+  -fx-background-radius: 10px;
+}
+.buttonStyle:hover {
+    -fx-background-color: #31305A;
+}
+.buttonStyle:pressed {
+    -fx-background-color: #7DC0C1;
+    -fx-border-color: #555555;
+}
+.smallButton{
+    -fx-font-family: "open_sans_lightregular";
+    -fx-background-color: #7DC0C1;
+    -fx-border: none;
+    -fx-text-align: center;
+    -fx-text-decoration: none;
+    -fx-display: inline-block;
+    -fx-font-size: 12px;
+    -fx-text-fill: white;
+}
+.smallButton:hover {
+    -fx-background-color: #31305A;
+    -fx-font-weight: bold;
+}
+.smallButton:pressed {
+    -fx-background-color: #7DC0C1;
+    -fx-border-color: #555555;
+}
+.buttonDelete{
+    -fx-font-family: "open_sans_lightregular";
+    -fx-background-color: #7DC0C1;
+    -fx-border: none;
+    -fx-text-align: center;
+    -fx-text-decoration: none;
+    -fx-display: inline-block;
+    -fx-font-size: 12px;
+    -fx-text-fill: white;
+    -fx-background-radius: 10px;
+}
+.buttonDelete:hover {
+    -fx-background-color: red;
+    -fx-font-weight: bold;
+}
+.buttonDelete:pressed {
+    -fx-background-color: #7DC0C1;
+    -fx-border-color: #555555;
+}
+
+.smallButtonCancel{
+    -fx-font-family: "open_sans_lightregular";
+    -fx-background-color: #7DC0C1;
+    -fx-border: none;
+    -fx-text-align: center;
+    -fx-text-decoration: none;
+    -fx-display: inline-block;
+    -fx-font-size: 12px;
+    -fx-text-fill: white;
+}
+.smallButtonCancel:hover {
+    -fx-background-color: red;
+    -fx-font-weight: bold;
+}
+.smallButtonCancel:pressed {
+    -fx-background-color: #7DC0C1;
+    -fx-border-color: #555555;
+}
+
+.smallButtonSave{
+    -fx-font-family: "open_sans_lightregular";
+    -fx-background-color: #7DC0C1;
+    -fx-border: none;
+    -fx-text-align: center;
+    -fx-text-decoration: none;
+    -fx-display: inline-block;
+    -fx-font-size: 12px;
+    -fx-text-fill: white;
+}
+.smallButtonSave:hover {
+    -fx-background-color: green;
+    -fx-font-weight: bold;
+}
+.smallButtonSave:pressed {
+    -fx-background-color: #7DC0C1;
+    -fx-border-color: #555555;
+}
+
+.buttonRunSen {
+  -fx-font-family: "open_sans_lightregular";
+  -fx-background-color: #7DC0C1;
+  -fx-border: none;
+  -fx-text-align: center;
+  -fx-text-decoration: none;
+  -fx-display: inline-block;
+  -fx-font-size: 12px;
+  -fx-text-fill: white;
+  -fx-background-radius: 10px;
+}
+.buttonRunSen:hover {
+    -fx-background-color: #31305A;
+    -fx-font-weight: bold;
+}
+.buttonRunSen:pressed {
+    -fx-background-color: #7DC0C1;
+    -fx-border-color: #555555;
+}
+
+.menuItemTree:hover {
+    -fx-background-color: #7DC0C1;
+    -fx-opacity:0.7;
+    -fx-text-fill: white;
+    -fx-font-weight: bold;
+}
+#lblmenuItemBuildsDownloader, #lblmenuItemBuildsRunner, #lblmenuItemPoirots{
+    -fx-font-size: 14px;
+    -fx-padding: 10 15 10 20;
+    -fx-border-width: 1;
+    -fx-border-color: transparent transparent #E8E8E8 transparent;
+    -fx-min-width: 200px;
+    -fx-pref-width: 200px;
+    -fx-max-width: 200px;
+}
+.menu-item-selected{
+    -fx-background-color: #31305A;
+    -fx-text-fill: white;
+    -fx-font-weight: bold;
+}
+
+#lbl1 {
+    -fx-font-size: 20pt;
+    -fx-text-fill: #31305A;
+}
+
+.listView{
+    -fx-font-family: Arial;
+    -fx-font-size: 12px;
+}
+.list-cell:hover {
+    -fx-background-color: #7DC0C1;
+}
+.list-cell:focused {
+    -fx-background-color: #31305A;
+    -fx-text-fill: white;
+}
+
+
