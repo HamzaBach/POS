@@ -3,6 +3,7 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
+<?import java.net.URL?>
 <BorderPane xmlns:fx="http://javafx.com/fxml" fx:controller="com.wms.pos.controllers.POSController">
     <top>
         <VBox spacing="10"  alignment="CENTER">
@@ -18,4 +19,8 @@
             <Label fx:id="totalLabel" text="Total: $0.00"/>
         </VBox>
     </center>
+    <!-- Bottom Section: Numeric Keyboard -->
+    <right>
+        <fx:include source="NumericKeyboard.fxml"/>
+    </right>
 </BorderPane>

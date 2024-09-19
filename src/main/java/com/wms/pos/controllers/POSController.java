@@ -1,10 +1,8 @@
 package com.wms.pos.controllers;
 
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.scene.control.Alert;
-import javafx.scene.control.Label;
-import javafx.scene.control.ListView;
-import javafx.scene.control.TextField;
+import javafx.scene.control.*;
 
 public class POSController {
 
@@ -47,6 +45,30 @@ public class POSController {
             itemPriceField.clear();
         } catch (NumberFormatException e) {
             showAlert(Alert.AlertType.ERROR, "Invalid Input", "Please enter a valid price.");
+        }
+    }
+
+    // Handle numeric input from the keyboard
+    @FXML
+    private void handleNumberInput(ActionEvent event) {
+        Button source = (Button) event.getSource();
+        itemPriceField.appendText(source.getText());
+    }
+
+    // Handle decimal point input
+    @FXML
+    private void handleDecimalInput() {
+        if (!itemPriceField.getText().contains(".")) {
+            itemPriceField.appendText(".");
+        }
+    }
+
+    // Handle backspace functionality
+    @FXML
+    private void handleBackspace() {
+        String currentText = itemPriceField.getText();
+        if (!currentText.isEmpty()) {
+            itemPriceField.setText(currentText.substring(0, currentText.length() - 1));
         }
     }
 

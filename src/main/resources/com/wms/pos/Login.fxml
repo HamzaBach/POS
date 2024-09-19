@@ -20,7 +20,7 @@
 <BorderPane fx:id="loginPane" xmlns="http://javafx.com/javafx"
             xmlns:fx="http://javafx.com/fxml"
             fx:controller="com.wms.pos.controllers.LoginController"
-            prefHeight="250" prefWidth="400">
+            >
     <stylesheets>
         <URL value="@stylesheet.css"/>
     </stylesheets>

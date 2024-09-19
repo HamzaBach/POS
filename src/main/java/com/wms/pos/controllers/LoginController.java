@@ -1,5 +1,6 @@
 package com.wms.pos.controllers;
 
+import com.wms.pos.POSApp;
 import javafx.fxml.FXML;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
@@ -37,25 +38,25 @@ public class LoginController {
     }
 
     @FXML
-    private void login(MouseEvent event) {
+    private void login(MouseEvent event) throws Exception {
         String userName = txtUserName.getText();
         String tfsUserId = txtPassword.getText();
         boolean saveCredentials = chkbxSaveCredentials.isSelected();
 
         // Example validation
         if (userName.isEmpty() || tfsUserId.isEmpty()) {
-            alrtError.setContentText("Username and TFS User Id cannot be empty.");
+            alrtError.setContentText("Username and password cannot be empty.");
             alrtError.showAndWait();
         } else {
             // Perform login logic here
             // Example: Simulate successful login
             if (saveCredentials) {
                 alrtInfo.setContentText("Credentials saved for user: " + userName);
-                alrtInfo.showAndWait();
             } else {
                 alrtInfo.setContentText("Login successful for user: " + userName);
-                alrtInfo.showAndWait();
             }
+            alrtInfo.showAndWait();
+            POSApp.switchToPosScreen();
         }
     }
 }
