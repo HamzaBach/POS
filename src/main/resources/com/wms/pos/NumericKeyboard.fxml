@@ -3,25 +3,29 @@
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.layout.GridPane?>
 
-<GridPane xmlns:fx="http://javafx.com/fxml" fx:controller="com.wms.pos.controllers.POSController"
+<?import java.net.URL?>
+<GridPane xmlns:fx="http://javafx.com/fxml" fx:controller="com.wms.pos.controllers.NumericKeyboardController"
           hgap="10" vgap="10" alignment="CENTER">
+    <stylesheets>
+        <URL value="@stylesheet.css"/>
+    </stylesheets>
     <!-- Row 1 -->
-    <Button text="1" GridPane.columnIndex="0" GridPane.rowIndex="0" onAction="#handleNumberInput"/>
-    <Button text="2" GridPane.columnIndex="1" GridPane.rowIndex="0" onAction="#handleNumberInput"/>
-    <Button text="3" GridPane.columnIndex="2" GridPane.rowIndex="0" onAction="#handleNumberInput"/>
+    <Button text="1" GridPane.columnIndex="0" GridPane.rowIndex="0" onAction="#handleNumberClick"/>
+    <Button text="2" GridPane.columnIndex="1" GridPane.rowIndex="0" onAction="#handleNumberClick"/>
+    <Button text="3" GridPane.columnIndex="2" GridPane.rowIndex="0" onAction="#handleNumberClick"/>
 
     <!-- Row 2 -->
-    <Button text="4" GridPane.columnIndex="0" GridPane.rowIndex="1" onAction="#handleNumberInput"/>
-    <Button text="5" GridPane.columnIndex="1" GridPane.rowIndex="1" onAction="#handleNumberInput"/>
-    <Button text="6" GridPane.columnIndex="2" GridPane.rowIndex="1" onAction="#handleNumberInput"/>
+    <Button text="4" GridPane.columnIndex="0" GridPane.rowIndex="1" onAction="#handleNumberClick"/>
+    <Button text="5" GridPane.columnIndex="1" GridPane.rowIndex="1" onAction="#handleNumberClick"/>
+    <Button text="6" GridPane.columnIndex="2" GridPane.rowIndex="1" onAction="#handleNumberClick"/>
 
     <!-- Row 3 -->
-    <Button text="7" GridPane.columnIndex="0" GridPane.rowIndex="2" onAction="#handleNumberInput"/>
-    <Button text="8" GridPane.columnIndex="1" GridPane.rowIndex="2" onAction="#handleNumberInput"/>
-    <Button text="9" GridPane.columnIndex="2" GridPane.rowIndex="2" onAction="#handleNumberInput"/>
+    <Button text="7" GridPane.columnIndex="0" GridPane.rowIndex="2" onAction="#handleNumberClick"/>
+    <Button text="8" GridPane.columnIndex="1" GridPane.rowIndex="2" onAction="#handleNumberClick"/>
+    <Button text="9" GridPane.columnIndex="2" GridPane.rowIndex="2" onAction="#handleNumberClick"/>
 
     <!-- Row 4 -->
     <Button text="." GridPane.columnIndex="0" GridPane.rowIndex="3" onAction="#handleDecimalInput"/>
-    <Button text="0" GridPane.columnIndex="1" GridPane.rowIndex="3" onAction="#handleNumberInput"/>
+    <Button text="0" GridPane.columnIndex="1" GridPane.rowIndex="3" onAction="#handleNumberClick"/>
     <Button text="⌫" GridPane.columnIndex="2" GridPane.rowIndex="3" onAction="#handleBackspace"/>
 </GridPane>

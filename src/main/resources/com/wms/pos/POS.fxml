@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<?import java.net.URL?>
+<BorderPane xmlns:fx="http://javafx.com/fxml" fx:controller="com.wms.pos.controllers.POSController">
+    <stylesheets>
+        <URL value="@stylesheet.css"/>
+    </stylesheets>
+
+    <left>
+        <!-- TabPane with tabs on the left side -->
+        <TabPane fx:id="tabPane" side="LEFT">
+            <!-- Define tabs -->
+            <Tab text="Tab 1" closable="false">
+                <!-- VBox with content for Tab 1 -->
+                <VBox fx:id="tab1Content" spacing="10" alignment="CENTER">
+                    <Label text="Enter Item Details"/>
+                    <TextField fx:id="itemNameField" promptText="Item Name"/>
+                    <TextField fx:id="itemPriceField" promptText="Item Price"/>
+                    <Button text="Add Item" onAction="#handleAddItem"/>
+                    <ListView fx:id="itemListView" prefHeight="200"/>
+                    <Label fx:id="totalLabel" text="Total: $0.00"/>
+<!--                    <fx:include source="NumericKeyboard.fxml"/>-->
+                </VBox>
+            </Tab>
+            <Tab text="Tab 2" closable="false">
+            </Tab>
+            <Tab text="Tab 3" closable="false">
+            </Tab>
+
+        </TabPane>
+    </left>
+
+    <center>
+        <!-- StackPane for displaying content -->
+        <StackPane fx:id="contentStackPane">
+
+            <!--&lt;!&ndash; VBox with content for Tab 1 (hidden by default, shown when Tab 1 is selected) &ndash;&gt;
+            <VBox fx:id="tab1Content" spacing="10" alignment="CENTER" visible="false">
+                <ListView fx:id="itemListView" prefHeight="200"/>
+                <Label fx:id="totalLabel" text="Total: $0.00"/>
+                <fx:include source="NumericKeyboard.fxml"/>
+                <fx:include source="NumericKeyboard1.fxml"/>
+            </VBox>-->
+
+            <!-- You can define other content here for other tabs, or leave empty for now -->
+
+        </StackPane>
+    </center>
+
+
+    <!--<top>
+        <VBox spacing="10"  alignment="CENTER">
+            <Label text="Enter Item Details"/>
+            <TextField fx:id="itemNameField" promptText="Item Name"/>
+            <TextField fx:id="itemPriceField" promptText="Item Price"/>
+            <Button text="Add Item" onAction="#handleAddItem"/>
+        </VBox>
+    </top>
+    <center>
+        <VBox spacing="10"  alignment="CENTER">
+            <ListView fx:id="itemListView" prefHeight="200"/>
+            <Label fx:id="totalLabel" text="Total: $0.00"/>
+        </VBox>
+    </center>
+    &lt;!&ndash; Bottom Section: Numeric Keyboard &ndash;&gt;
+    <right>
+        <fx:include source="NumericKeyboard.fxml"/>
+    </right>-->
+</BorderPane>

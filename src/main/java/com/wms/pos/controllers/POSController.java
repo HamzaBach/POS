@@ -2,10 +2,23 @@ package com.wms.pos.controllers;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
 import javafx.scene.control.*;
+import javafx.scene.layout.StackPane;
+import javafx.scene.layout.VBox;
+
+import java.io.IOException;
+import java.net.URL;
 
 public class POSController {
 
+    @FXML
+    public TabPane tabPane;
+    @FXML
+    public StackPane contentStackPane;
+    @FXML
+    public VBox tab1Content;
     @FXML
     private TextField itemNameField;
 
@@ -19,6 +32,29 @@ public class POSController {
     private Label totalLabel;
 
     private double totalAmount = 0.0;
+    // Reference to NumericKeyboard controller
+    private static NumericKeyboardController numericKeyboardController;
+
+    @FXML
+    public void initialize() {
+        try {
+            // Load NumericKeyboard.fxml and get its controller
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/com/wms/pos/NumericKeyboard.fxml"));
+            Parent numericKeyboardRoot = loader.load();
+
+            // Get the controller for the NumericKeyboard
+            numericKeyboardController = loader.getController();
+
+            // Set the reference of the parent controller in the child
+            numericKeyboardController.setParentController(this);
+
+            // Add the loaded NumericKeyboard to the UI
+            tab1Content.getChildren().add(numericKeyboardRoot);
+
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
 
     @FXML
     private void handleAddItem() {
@@ -48,28 +84,18 @@ public class POSController {
         }
     }
 
-    // Handle numeric input from the keyboard
-    @FXML
-    private void handleNumberInput(ActionEvent event) {
-        Button source = (Button) event.getSource();
-        itemPriceField.appendText(source.getText());
+
+
+    // You can expose any method that the child needs, e.g., modifying the itemPriceField
+    public void updateItemPrice(String number) {
+        itemPriceField.setText(itemPriceField.getText() + number);
     }
 
-    // Handle decimal point input
-    @FXML
-    private void handleDecimalInput() {
-        if (!itemPriceField.getText().contains(".")) {
-            itemPriceField.appendText(".");
-        }
+    public String getItemPrice(){
+        return itemPriceField.getText();
     }
-
-    // Handle backspace functionality
-    @FXML
-    private void handleBackspace() {
-        String currentText = itemPriceField.getText();
-        if (!currentText.isEmpty()) {
-            itemPriceField.setText(currentText.substring(0, currentText.length() - 1));
-        }
+    public void setItemPrice(String itemPrice){
+        this.itemPriceField.setText(itemPrice);
     }
 
     private void showAlert(Alert.AlertType alertType, String title, String message) {

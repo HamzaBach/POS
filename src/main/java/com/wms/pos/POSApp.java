@@ -6,8 +6,6 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
 
-import java.util.Objects;
-
 public class POSApp extends Application {
 
     private static Stage primaryStage;
@@ -17,7 +15,7 @@ public class POSApp extends Application {
         try {
             // Load login.fxml initially
             primaryStage = stage;
-            FXMLLoader loginLoader = new FXMLLoader(getClass().getResource("Login.fxml"));
+            FXMLLoader loginLoader = new FXMLLoader(getClass().getResource("/com/wms/pos/Login.fxml"));
             Parent root = loginLoader.load();
             Scene scene = new Scene(root);
 
@@ -37,7 +35,12 @@ public class POSApp extends Application {
     // Method to switch scenes
     public static void switchToPosScreen() throws Exception {
         // Load pos.xml for the main POS screen
-        Parent posRoot = FXMLLoader.load(Objects.requireNonNull(POSApp.class.getResource("Pos.fxml")));
+        FXMLLoader loader = new FXMLLoader(POSApp.class.getResource("/com/wms/pos/POS.fxml"));
+        Parent posRoot = loader.load();
+        //POSController controller = loader.getController(); // Get controller instance
+
+
+        //Parent posRoot = FXMLLoader.load(Objects.requireNonNull(POSApp.class.getResource("POS.fxml")));
         Scene posScene = new Scene(posRoot);
 
         // Set the new scene (POS screen)
